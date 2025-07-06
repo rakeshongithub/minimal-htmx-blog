@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= post.title %></title>
+    <script src="https://unpkg.com/htmx.org"></script>
+  </head>
+  <body>
+    <h1><%= post.title %></h1>
+    <p><%= post.content %></p>
+
+    <button
+      hx-get="/comment-form/<%= post.id %>"
+      hx-target="#form-container"
+      hx-swap="innerHTML"
+    >
+      Add Comment
+    </button>
+
+    <div id="form-container"></div>
+
+    <div id="comments">
+      <% include ('partials/commentList', { comments }) %>
+    </div>
+  </body>
+</html>

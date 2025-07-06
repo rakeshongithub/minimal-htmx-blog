@@ -1,0 +1,5 @@
+<form hx-post="/comment" hx-target="#comments" hx-swap="innerHTML">
+  <input type="hidden" name="postId" value="<%= postId %>" />
+  <textarea name="text" required></textarea>
+  <button type="submit">Submit</button>
+</form>
